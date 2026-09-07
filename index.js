@@ -25,7 +25,7 @@ app.get('/', async (req, res) => {
     try {
         const resp = await axios.get(pets_endpoint, { headers });
         const data = resp.data.results;
-        console.log(data)
+        res.render('homepage', { title: 'Custom Objects | Integrating With HubSpot I Practicum', data });
     } catch (error) {
         console.error(error);
     }
